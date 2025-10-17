@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 
@@ -25,8 +24,8 @@ export const EmailRestAPI = () => {
       setStatusMessage('All fields are required. Please fill out the form completely.');
       setTimeout(() => {
         setStatusMessage('');
-      }, 5000); // Clear the message after 5 seconds
-      return; // Stop further executions
+      }, 5000);
+      return;
     }
   
     setIsSending(true);
@@ -35,7 +34,9 @@ export const EmailRestAPI = () => {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  
+
+    console.log({ serviceId, templateId, publicKey });
+
     const data = {
       service_id: serviceId,
       template_id: templateId,
@@ -49,7 +50,18 @@ export const EmailRestAPI = () => {
     };
   
     try {
-      await axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+      
       setStatusMessage('Message sent successfully!');
       setTimeout(() => {
         setStatusMessage('');

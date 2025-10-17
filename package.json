@@ -1,8 +1,8 @@
 {
-  "name": "vite-react-typescript-starter",
-  "version": "0.0.0",
+  "name": "giridharan-portfolio",
+  "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "Personal portfolio website of Giridharan Senthilkumar",
   "homepage": "https://github.com/GiridharanS#readme",
   "bugs": {
     "url": "https://github.com/GiridharanS/issues"
@@ -23,12 +23,14 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "axios": "^1.7.9",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "framer-motion": "^11.15.0",
     "lucide-react": "^0.344.0",
+    "prismjs": "^1.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "react-syntax-highlighter": "^15.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -40,6 +42,7 @@
     "eslint": "^9.9.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
+    "gh-pages": "^6.3.0",
     "globals": "^15.9.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",

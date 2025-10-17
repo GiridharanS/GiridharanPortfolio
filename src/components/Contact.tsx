@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { EmailRestAPI } from '../components/EmailRESTAPI';  
+import { EmailRestAPI } from '../components/EmailRESTAPI';
+import { SectionNav } from './ui/SectionNav';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-900 relative">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -63,6 +64,9 @@ export const Contact = () => {
           </motion.div>
         </div>
       </div>
+      <br /><br />
+      {/* Navigation Arrow */}
+      <SectionNav nextSectionId="#about" label="Back to Top" />
     </section>
   );
 };
